@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Propuesto04.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+table {color: #888888; background-color: #313335; font-family: Consolas}
+.literal {color: #cc7832}
+.whitespace {color: #505050}
+.comment {color: #808080}
+.ST1 {color: #ffc66d; font-family: Consolas; font-style: italic}
+.ST2 {color: #9876aa; font-family: Consolas; font-style: italic}
+.ST0 {color: #808080; font-family: Consolas; font-weight: bold}
+.string {color: #6a8759}
+.number {color: #6897bb}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Moisés\Documents\GitHub\Taller_de_Programación\Semana03\S04_Ejercicios_Propuestos_Clases\src\s04\Propuesto04.java</td></tr></table>
+<pre>
+ 1 <span class="literal">package</span> s04;
+ 2 
+ 3 <span class="literal">import</span> java.util.Scanner;
+ 4 
+ 5 <span class="comment">/**</span>
+ 6 <span class="comment"> * </span><span class="comment">Un</span> <span class="comment">banco</span> <span class="comment">aplica</span> <span class="comment">un</span> <span class="comment">descuento</span> <span class="comment">a</span> <span class="comment">sus</span> <span class="comment">clientes</span> <span class="comment">en</span> <span class="comment">el</span> <span class="comment">pago</span> <span class="comment">de</span> <span class="comment">membresía</span> <span class="comment">por</span> 
+ 7 <span class="comment"> * </span><span class="comment">el</span> <span class="comment">uso</span> <span class="comment">de</span> <span class="comment">algunas</span> <span class="comment">de</span> <span class="comment">sus</span> <span class="comment">tarjetas</span> <span class="comment">de</span> <span class="comment">crédito</span><span class="comment">.</span> <span class="comment">Ingresar</span> <span class="comment">el</span> <span class="comment">tipo</span> <span class="comment">de</span> 
+ 8 <span class="comment"> * </span><span class="comment">tarjeta</span> <span class="comment">y</span> <span class="comment">calcular</span> <span class="comment">dicho</span> <span class="comment">descuento</span> <span class="comment">en</span> <span class="comment">soles</span><span class="comment">.</span>
+ 9 <span class="comment"> * </span>
+10 <span class="comment"> * |        **</span><span class="comment">Tarjeta</span><span class="comment">**       | **</span><span class="comment">Membresia</span><span class="comment"> (</span><span class="comment">S</span><span class="comment">/</span><span class="comment">.</span><span class="comment">)** | **</span><span class="comment">Descuento</span><span class="comment">** |</span>
+11 <span class="comment"> * |:------------------------:|:-------------------:|:-------------:|</span>
+12 <span class="comment"> * | </span><span class="comment">LifeMiles</span><span class="comment">                |              400</span><span class="comment">.</span><span class="comment">00 |            9% |</span>
+13 <span class="comment"> * | </span><span class="comment">Platinium</span><span class="comment">                |              350</span><span class="comment">.</span><span class="comment">00 |            8% |</span>
+14 <span class="comment"> * | </span><span class="comment">Signature</span><span class="comment">                |              300</span><span class="comment">.</span><span class="comment">00 |            7% |</span>
+15 <span class="comment"> * | </span><span class="comment">Oro</span><span class="comment">                      |              190</span><span class="comment">.</span><span class="comment">00 |            6% |</span>
+16 <span class="comment"> * | </span><span class="comment">Repsol</span><span class="comment">, </span><span class="comment">Primera</span><span class="comment">, </span><span class="comment">MCBlack</span><span class="comment"> |               75</span><span class="comment">.</span><span class="comment">00 |            5% |</span>
+17 <span class="comment"> * | </span><span class="comment">Otros</span><span class="comment">                    |                0</span><span class="comment">.</span><span class="comment">00 |            0% |</span>
+18 <span class="comment"> *</span>
+19 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Magh</span>
+20  <span class="comment">*/</span>
+21 <span class="literal">public</span> <span class="literal">class</span> Propuesto04 {
+22     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
+23         String tipoTarjeta;
+24         <span class="literal">double</span> membresia, descPorcent, descMembresia;
+25         
+26         Scanner teclado = <span class="literal">new</span> Scanner(System.<span class="ST2">in</span>);
+27         
+28         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Ingrese el tipo de tarjeta: </span><span class="string">&quot;</span>);
+29         tipoTarjeta = teclado.nextLine();
+30         
+31         
+32         <span class="literal">switch</span> (tipoTarjeta.toLowerCase()) {
+33             <span class="literal">case</span> <span class="string">&quot;</span><span class="string">lifemiles</span><span class="string">&quot;</span>:
+34                 membresia = <span class="number">400.00</span>; descPorcent = <span class="number">0.09</span>;
+35                 <span class="literal">break</span>;
+36             <span class="literal">case</span> <span class="string">&quot;</span><span class="string">platinium</span><span class="string">&quot;</span>:
+37                 membresia = <span class="number">350.00</span>; descPorcent = <span class="number">0.08</span>;
+38                 <span class="literal">break</span>;
+39             <span class="literal">case</span> <span class="string">&quot;</span><span class="string">signature</span><span class="string">&quot;</span>:
+40                 membresia = <span class="number">300.00</span>; descPorcent = <span class="number">0.07</span>;
+41                 <span class="literal">break</span>;
+42             <span class="literal">case</span> <span class="string">&quot;</span><span class="string">oro</span><span class="string">&quot;</span>:
+43                 membresia = <span class="number">190.00</span>; descPorcent = <span class="number">0.06</span>;
+44                 <span class="literal">break</span>;
+45             <span class="literal">case</span> <span class="string">&quot;</span><span class="string">repsol</span><span class="string">&quot;</span>:
+46             <span class="literal">case</span> <span class="string">&quot;</span><span class="string">primera</span><span class="string">&quot;</span>:
+47             <span class="literal">case</span> <span class="string">&quot;</span><span class="string">mcblack</span><span class="string">&quot;</span>:
+48                 membresia = <span class="number">75.00</span>; descPorcent = <span class="number">0.05</span>;
+49                 <span class="literal">break</span>;
+50             <span class="literal">default</span>:
+51                 membresia = <span class="number">0.00</span>; descPorcent = <span class="number">0.00</span>;
+52                 <span class="literal">break</span>;
+53         }
+54         
+55         descMembresia = membresia * descPorcent;
+56         System.<span class="ST2">out</span>.printf(<span class="string">&quot;</span><span class="string">El descuento en la membresía de la </span><span class="string">&quot;</span>
+57         + <span class="string">&quot;</span><span class="string">tarjeta %s es: S/ %.2f</span><span class="literal">\n</span><span class="string">&quot;</span>, tipoTarjeta, descMembresia);
+58         
+59         teclado.close();
+60     }
+61 }
+62 
+</pre></body>
+</html>

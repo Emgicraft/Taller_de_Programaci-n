@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejercicio08.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+table {color: #888888; background-color: #313335; font-family: Consolas}
+.literal {color: #cc7832}
+.whitespace {color: #505050}
+.comment {color: #808080}
+.ST1 {color: #ffc66d; font-family: Consolas; font-style: italic}
+.ST2 {color: #9876aa; font-family: Consolas; font-style: italic}
+.ST0 {color: #808080; font-family: Consolas; font-weight: bold}
+.string {color: #6a8759}
+.number {color: #6897bb}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Moisés\Documents\GitHub\Taller_de_Programación\Semana02\S02_Ejercicios\src\s02_ejercicios\Ejercicio08.java</td></tr></table>
+<pre>
+ 1 <span class="literal">package</span> s02_ejercicios;
+ 2 
+ 3 <span class="literal">import</span> java.util.Scanner;
+ 4 
+ 5 <span class="comment">/**</span>
+ 6 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Moisés</span>
+ 7  <span class="comment">*/</span>
+ 8 <span class="literal">public</span> <span class="literal">class</span> Ejercicio08 {
+ 9     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
+10         <span class="comment">// Declaración e inicialización</span>
+11         <span class="literal">double</span> radio, longitudCircunferencia, areaCirculo;
+12 
+13         <span class="comment">// Entrada</span>
+14         Scanner teclado = <span class="literal">new</span> Scanner(System.<span class="ST2">in</span>);
+15         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese el radio: </span><span class="string">&quot;</span>); radio = teclado.nextDouble();
+16 
+17         <span class="comment">//Proceso</span>
+18         longitudCircunferencia = <span class="number">2</span>*Math.<span class="ST2">PI</span>*radio;
+19         areaCirculo = Math.<span class="ST2">PI</span>*(radio*radio);
+20 
+21         <span class="comment">//Salida</span>
+22         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Dado un radio de </span><span class="string">&quot;</span>+ radio + <span class="string">&quot;</span><span class="string"> cm, se calcula lo siguiente:</span><span class="string">&quot;</span>);
+23         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Longitud de la circunferencia = </span><span class="string">&quot;</span> + longitudCircunferencia + <span class="string">&quot;</span><span class="string"> cm</span><span class="string">&quot;</span>);
+24         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="literal">\u00C1</span><span class="string">rea del c</span><span class="literal">\u00ED</span><span class="string">rculo = </span><span class="string">&quot;</span> + areaCirculo + <span class="string">&quot;</span><span class="string"> cm^2</span><span class="string">&quot;</span>);
+25     }
+26 }
+</pre></body>
+</html>

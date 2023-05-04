@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Utilidades_v2.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+table {color: #888888; background-color: #313335; font-family: Consolas}
+.ST4 {font-family: Consolas; font-style: italic}
+.literal {color: #cc7832}
+.whitespace {color: #505050}
+.comment {color: #808080}
+.ST1 {color: #9876aa; font-family: Consolas; font-style: italic}
+.ST3 {color: #ffc66d; font-family: Consolas; font-style: italic}
+.ST0 {color: #808080; font-family: Consolas; font-weight: bold}
+.ST2 {color: #8a653b}
+.number {color: #6897bb}
+.string {color: #6a8759}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Moisés\Documents\GitHub\Taller_de_Programación\Semana03\S04_Ejercicios_Propuestos_Clases\src\s04\Utilidades_v2.java</td></tr></table>
+<pre>
+  1 <span class="literal">package</span> s04;
+  2 
+  3 <span class="literal">import</span> java.util.Scanner;
+  4 
+  5 <span class="comment">/**</span>
+  6 <span class="comment"> * </span><span class="comment">Clase</span> <span class="comment">con</span> <span class="comment">funciones</span> <span class="comment">básica</span> <span class="comment">del</span> <span class="comment">mismo</span> <span class="comment">java</span> <span class="comment">pero</span> 
+  7 <span class="comment"> * </span><span class="comment">mejoradas</span> <span class="comment">o</span> <span class="comment">personalizadas</span><span class="comment">.</span>
+  8 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Moisés</span>
+  9  <span class="comment">*/</span>
+ 10 <span class="literal">public</span> <span class="literal">class</span> Utilidades_v2 {
+ 11     <span class="literal">private</span> <span class="literal">static</span> Scanner <span class="ST1">inTeclado</span> = <span class="literal">new</span> Scanner(System.<span class="ST1">in</span>);
+ 12     <span class="comment">/**</span>
+ 13 <span class="comment">     * </span><span class="comment">Función</span> <span class="comment">redondear</span><span class="comment">, </span><span class="comment">recibe</span> <span class="comment">el</span> <span class="comment">numero</span> <span class="comment">a</span> <span class="comment">aproximar</span> 
+ 14 <span class="comment">     * </span><span class="comment">y</span> <span class="comment">la</span> <span class="comment">cantidad</span> <span class="comment">de</span> <span class="comment">decimales</span> <span class="comment">a</span> <span class="comment">aproximar</span><span class="comment">.</span>
+ 15 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">numero</span> <span class="comment">valor</span> <span class="comment">a</span> <span class="comment">redondear</span>
+ 16 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">cntDecimales</span> <span class="comment">valor</span> <span class="comment">que</span> <span class="comment">indica</span> <span class="comment">número</span> <span class="comment">de</span> <span class="comment">decimales</span>
+ 17 <span class="comment">     * </span><span class="ST0">@return</span> <span class="comment">retorna</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">aproximado</span>
+ 18      <span class="comment">*/</span>
+ 19     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">double</span> <span class="ST3">redondear</span>(<span class="literal">double</span> numero, <span class="literal">double</span> cntDecimales) {
+ 20         <span class="literal">double</span> numrdn = Math.<span class="ST4">round</span>(numero*Math.<span class="ST4">pow</span>(<span class="number">1</span><span class="number">0</span>, cntDecimales))/Math.<span class="ST4">pow</span>(<span class="number">1</span><span class="number">0</span>, cntDecimales);
+ 21         <span class="literal">return</span> numrdn;
+ 22     }
+ 23     <span class="comment">/* // No sé si crear su versión en float:</span>
+ 24 <span class="comment">    public static float redondear(float numero, float cntDecimales) {</span>
+ 25 <span class="comment">        float numrdnF = (float) (Math.round(numero*Math.pow(10, cntDecimales))/Math.pow(10, cntDecimales));</span>
+ 26 <span class="comment">        return numrdnF;</span>
+ 27 <span class="comment">    }*/</span>
+ 28     
+ 29     <span class="comment">/**</span>
+ 30 <span class="comment">     * </span><span class="comment">Verifica</span> <span class="comment">si</span> <span class="comment">un</span> <span class="comment">número</span> <span class="comment">está</span> <span class="comment">dentro</span> <span class="comment">de</span> <span class="comment">un</span> <span class="comment">intervalo</span> <span class="comment">determinado</span> <span class="comment">y</span> <span class="comment">en</span> <span class="comment">caso</span> 
+ 31 <span class="comment">     * </span><span class="comment">no</span> <span class="comment">lo</span> <span class="comment">esté</span><span class="comment">, </span><span class="comment">lo</span> <span class="comment">seguirá</span> <span class="comment">solicitando</span> <span class="comment">hasta</span> <span class="comment">que</span> <span class="comment">la</span> <span class="comment">condición</span> <span class="comment">se</span> <span class="comment">cumpla</span><span class="comment">.</span>
+ 32 <span class="comment">     *</span>
+ 33 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">num</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">a</span> <span class="comment">verificar</span>
+ 34 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">intervalo</span> <span class="comment">un</span> <span class="comment">array</span> <span class="comment">de</span> <span class="comment">dos</span> <span class="comment">elementos</span> <span class="comment">que</span> <span class="comment">representa</span> <span class="comment">el</span> <span class="comment">intervalo</span> <span class="comment">dentro</span> <span class="comment">del</span> <span class="comment">cual</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">debe</span> <span class="comment">estar</span>
+ 35 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">mensajeError</span> <span class="comment">el</span> <span class="comment">mensaje</span> <span class="comment">de</span> <span class="comment">error</span> <span class="comment">que</span> <span class="comment">se</span> <span class="comment">mostrará</span> <span class="comment">en</span> <span class="comment">caso</span> <span class="comment">de</span> <span class="comment">que</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">no</span> <span class="comment">esté</span> <span class="comment">dentro</span> <span class="comment">del</span> <span class="comment">intervalo</span>
+ 36 <span class="comment">     * </span><span class="ST0">@return</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">verificado</span> <span class="comment">si</span> <span class="comment">se</span> <span class="comment">encuentra</span> <span class="comment">dentro</span> <span class="comment">del</span> <span class="comment">intervalo</span>
+ 37      <span class="comment">*/</span>
+ 38     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">double</span> <span class="ST3">verificar</span>(<span class="literal">double</span> num, <span class="literal">double</span>[] intervalo, String mensajeError) {
+ 39         <span class="literal">while</span> (!(num &gt;= intervalo[<span class="number">0</span>] &amp;&amp; num &lt;= intervalo[<span class="number">1</span>])){
+ 40             System.<span class="ST1">out</span>.println(mensajeError);
+ 41             <span class="literal">if</span> (intervalo[<span class="number">1</span>] == Double.<span class="ST1">POSITIVE_INFINITY</span>) {
+ 42                 System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">Su entrada debe ser mayor a </span><span class="string">&quot;</span> 
+ 43                                 + intervalo[<span class="number">0</span>] + <span class="string">&quot;</span><span class="string">: </span><span class="string">&quot;</span>);
+ 44             } <span class="literal">else</span> {
+ 45                 System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">Su entrada debe estar entre </span><span class="string">&quot;</span> 
+ 46                                 + intervalo[<span class="number">0</span>] + <span class="string">&quot;</span><span class="string"> y </span><span class="string">&quot;</span> + intervalo[<span class="number">1</span>] + <span class="string">&quot;</span><span class="string">: </span><span class="string">&quot;</span>);
+ 47             }
+ 48             num = <span class="ST1">inTeclado</span>.nextDouble();
+ 49         }
+ 50         <span class="literal">return</span> num;
+ 51     }
+ 52     
+ 53     <span class="comment">/**</span>
+ 54 <span class="comment">     * </span><span class="comment">Verifica</span> <span class="comment">si</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">está</span> <span class="comment">dentro</span> <span class="comment">del</span> <span class="comment">intervalo</span> <span class="comment">dado</span> <span class="comment">y</span> 
+ 55 <span class="comment">     * </span><span class="comment">solicita</span> <span class="comment">el</span> <span class="comment">ingreso</span> <span class="comment">nuevamente</span> <span class="comment">si</span> <span class="comment">está</span> <span class="comment">fuera</span> <span class="comment">del</span> <span class="comment">intervalo</span><span class="comment">.</span>
+ 56 <span class="comment">     * </span>
+ 57 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">num</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">a</span> <span class="comment">verificar</span>
+ 58 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">intervalo</span> <span class="comment">un</span> <span class="comment">arreglo</span> <span class="comment">de</span> <span class="comment">dos</span> <span class="comment">elementos</span> <span class="comment">que</span> <span class="comment">indica</span> <span class="comment">el</span> <span class="comment">rango</span> <span class="comment">permitido</span> <span class="comment">de</span> <span class="comment">números</span>
+ 59 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">mensajeError</span> <span class="comment">el</span> <span class="comment">mensaje</span> <span class="comment">que</span> <span class="comment">se</span> <span class="comment">muestra</span> <span class="comment">si</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">ingresado</span> <span class="comment">está</span> <span class="comment">fuera</span> <span class="comment">del</span> <span class="comment">intervalo</span>
+ 60 <span class="comment">     * </span><span class="ST0">@return</span> <span class="comment">el</span> <span class="comment">número</span> <span class="comment">verificado</span> <span class="comment">que</span> <span class="comment">se</span> <span class="comment">encuentra</span> <span class="comment">dentro</span> <span class="comment">del</span> <span class="comment">intervalo</span>
+ 61      <span class="comment">*/</span>
+ 62     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">int</span> <span class="ST3">verificar</span>(<span class="literal">int</span> num, <span class="literal">int</span>[] intervalo, String mensajeError) {
+ 63         <span class="literal">while</span> (!(num &gt;= intervalo[<span class="number">0</span>] &amp;&amp; num &lt;= intervalo[<span class="number">1</span>])){
+ 64             System.<span class="ST1">out</span>.println(mensajeError);
+ 65             <span class="literal">if</span> (intervalo[<span class="number">1</span>] == Integer.<span class="ST1">MAX_VALUE</span>) {
+ 66                 System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">Su entrada debe ser mayor a </span><span class="string">&quot;</span> 
+ 67                                 + intervalo[<span class="number">0</span>] + <span class="string">&quot;</span><span class="string">: </span><span class="string">&quot;</span>);
+ 68             } <span class="literal">else</span> {
+ 69                 System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">Su entrada debe estar entre </span><span class="string">&quot;</span> 
+ 70                                 + intervalo[<span class="number">0</span>] + <span class="string">&quot;</span><span class="string"> y </span><span class="string">&quot;</span> + intervalo[<span class="number">1</span>] + <span class="string">&quot;</span><span class="string">: </span><span class="string">&quot;</span>);
+ 71             }
+ 72             num = <span class="ST1">inTeclado</span>.nextInt();
+ 73         }
+ 74         <span class="literal">return</span> num;
+ 75     }
+ 76 
+ 77     <span class="comment">/**</span>
+ 78 <span class="comment">     * </span><span class="comment">Verifica</span> <span class="comment">si</span> <span class="comment">una</span> <span class="comment">cadena</span> <span class="comment">de</span> <span class="comment">texto</span> <span class="comment">se</span> <span class="comment">parece</span> <span class="comment">a</span> <span class="comment">alguna</span> <span class="comment">de</span> <span class="comment">las</span> <span class="comment">cadenas</span> 
+ 79 <span class="comment">     * </span><span class="comment">de</span> <span class="comment">texto</span> <span class="comment">esperadas</span><span class="comment">.</span> <span class="comment">Si</span> <span class="comment">no</span> <span class="comment">lo</span> <span class="comment">es</span><span class="comment">, </span><span class="comment">se</span> <span class="comment">solicita</span> <span class="comment">nuevamente</span> <span class="comment">el</span> <span class="comment">ingreso</span> 
+ 80 <span class="comment">     * </span><span class="comment">del</span> <span class="comment">texto</span> <span class="comment">hasta</span> <span class="comment">que</span> <span class="comment">sea</span> <span class="comment">válido</span><span class="comment">.</span>
+ 81 <span class="comment">     *</span>
+ 82 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">inTexto</span> <span class="comment">la</span> <span class="comment">cadena</span> <span class="comment">de</span> <span class="comment">texto</span> <span class="comment">a</span> <span class="comment">verificar</span>
+ 83 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">textosEsperados</span> <span class="comment">un</span> <span class="comment">array</span> <span class="comment">de</span> <span class="comment">cadenas</span> <span class="comment">de</span> <span class="comment">texto</span> <span class="comment">que</span> <span class="comment">se</span> <span class="comment">esperan</span> <span class="comment">que</span> <span class="comment">se</span> <span class="comment">parezcan</span> <span class="comment">a</span> <span class="comment">inTexto</span>
+ 84 <span class="comment">     * </span><span class="ST0">@param</span> <span class="ST2">mensajeError</span> <span class="comment">el</span> <span class="comment">mensaje</span> <span class="comment">de</span> <span class="comment">error</span> <span class="comment">que</span> <span class="comment">se</span> <span class="comment">mostrará</span> <span class="comment">en</span> <span class="comment">caso</span> <span class="comment">de</span> <span class="comment">que</span> <span class="comment">inTexto</span> <span class="comment">no</span> <span class="comment">se</span> <span class="comment">parezca</span> <span class="comment">a</span> <span class="comment">ninguna</span> <span class="comment">de</span> <span class="comment">las</span> <span class="comment">cadenas</span> <span class="comment">de</span> <span class="comment">texto</span> <span class="comment">esperadas</span>
+ 85 <span class="comment">     * </span><span class="ST0">@return</span> <span class="comment">la</span> <span class="comment">cadena</span> <span class="comment">de</span> <span class="comment">texto</span> <span class="comment">verificada</span> <span class="comment">si</span> <span class="comment">se</span> <span class="comment">parece</span> <span class="comment">a</span> <span class="comment">alguna</span> <span class="comment">de</span> <span class="comment">las</span> <span class="comment">cadenas</span> <span class="comment">de</span> <span class="comment">texto</span> <span class="comment">esperadas</span>
+ 86      <span class="comment">*/</span>
+ 87     <span class="literal">public</span> <span class="literal">static</span> String <span class="ST3">verificar</span>(String inTexto, String[] textosEsperados, String mensajeError) {
+ 88         <span class="literal">boolean</span> valido = <span class="literal">false</span>;
+ 89         <span class="literal">while</span> (!valido) {
+ 90             <span class="literal">for</span> (String textoEsperado : textosEsperados) {
+ 91                 <span class="literal">if</span> (inTexto.equalsIgnoreCase(textoEsperado)) {
+ 92                     valido = <span class="literal">true</span>; <span class="literal">break</span>;
+ 93                 }
+ 94             }
+ 95 
+ 96             <span class="literal">if</span> (!valido) {
+ 97                 System.<span class="ST1">out</span>.print(mensajeError); inTexto = <span class="ST1">inTeclado</span>.nextLine();
+ 98             }
+ 99         }
+100         <span class="literal">return</span> inTexto; 
+101     }
+102 }
+103 
+</pre></body>
+</html>

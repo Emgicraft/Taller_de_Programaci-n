@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Propuesto03.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+table {color: #888888; background-color: #313335; font-family: Consolas}
+.ST3 {font-family: Consolas; font-style: italic}
+.literal {color: #cc7832}
+.whitespace {color: #505050}
+.comment {color: #808080}
+.ST1 {color: #ffc66d; font-family: Consolas; font-style: italic}
+.ST2 {color: #9876aa; font-family: Consolas; font-style: italic}
+.ST0 {color: #808080; font-family: Consolas; font-weight: bold}
+.string {color: #6a8759}
+.number {color: #6897bb}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Moisés\Documents\GitHub\Taller_de_Programación\Semana03\S04_Ejercicios_Propuestos_Clases\src\s04\Propuesto03.java</td></tr></table>
+<pre>
+  1 <span class="literal">package</span> s04;
+  2 
+  3 <span class="literal">import</span> java.util.Scanner;
+  4 
+  5 <span class="comment">/**</span>
+  6 <span class="comment"> * </span><span class="comment">Realice</span> <span class="comment">un</span> <span class="comment">menú</span> <span class="comment">de</span> <span class="comment">operaciones</span> <span class="comment">para</span> <span class="comment">seleccionar</span> <span class="comment">una</span> <span class="comment">figura</span><span class="comment"> (</span><span class="comment">círculo</span><span class="comment">, </span>
+  7 <span class="comment"> * </span><span class="comment">cuadrado</span><span class="comment">, </span><span class="comment">triángulo</span><span class="comment">, </span><span class="comment">rombo</span> <span class="comment">y</span> <span class="comment">paralelogramo</span><span class="comment">) </span><span class="comment">de</span> <span class="comment">la</span> <span class="comment">cual</span> <span class="comment">se</span> <span class="comment">debe</span> <span class="comment">calcular</span> 
+  8 <span class="comment"> * </span><span class="comment">su</span> <span class="comment">área</span><span class="comment">.</span> <span class="comment">El</span> <span class="comment">programa</span> <span class="comment">debe</span> <span class="comment">pedir</span> <span class="comment">los</span> <span class="comment">valores</span> <span class="comment">necesarios</span> <span class="comment">para</span> <span class="comment">calcular</span> <span class="comment">el</span> 
+  9 <span class="comment"> * </span><span class="comment">área</span> <span class="comment">de</span> <span class="comment">la</span> <span class="comment">figura</span> <span class="comment">elegida</span><span class="comment">.</span>
+ 10 <span class="comment"> *</span>
+ 11 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Magh</span>
+ 12  <span class="comment">*/</span>
+ 13 <span class="literal">public</span> <span class="literal">class</span> Propuesto03 {
+ 14     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
+ 15         <span class="comment">// Declaración e inicialización de variables globales</span>
+ 16         <span class="literal">int</span> opcion;
+ 17         <span class="literal">double</span> area;
+ 18         
+ 19         Scanner teclado = <span class="literal">new</span> Scanner(System.<span class="ST2">in</span>);
+ 20         
+ 21         <span class="literal">do</span> {
+ 22             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">=======[ MENÚ DE FIGURAS GEOMÉTRICAS ]=======</span><span class="string">&quot;</span>);
+ 23             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">1. Circulo</span><span class="string">&quot;</span>);
+ 24             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">2. Cuadrado</span><span class="string">&quot;</span>);
+ 25             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">3. Triángulo</span><span class="string">&quot;</span>);
+ 26             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">4. Rombo</span><span class="string">&quot;</span>);
+ 27             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">5. Paralelogramo</span><span class="string">&quot;</span>);
+ 28             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">6. [Salir]</span><span class="string">&quot;</span>);
+ 29             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">=============================================</span><span class="string">&quot;</span>);
+ 30             System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Seleccione una opción: </span><span class="string">&quot;</span>); opcion = teclado.nextInt();
+ 31             
+ 32             <span class="literal">switch</span>(opcion) {
+ 33                 <span class="literal">case</span> <span class="number">1</span>:
+ 34                     <span class="comment">// Entrada</span>
+ 35                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese el radio del circulo: </span><span class="string">&quot;</span>);
+ 36                     <span class="literal">double</span> radio = Utilidades_v2.<span class="ST3">verificar</span>(teclado.nextDouble(), 
+ 37                                     <span class="literal">new</span> <span class="literal">double</span>[]{<span class="number">0</span>, Double.<span class="ST2">POSITIVE_INFINITY</span>}, 
+ 38                                     <span class="string">&quot;</span><span class="string">Error! Intentelo de nuevo!</span><span class="string">&quot;</span>);
+ 39                     <span class="comment">// Proceso</span>
+ 40                     area = Math.<span class="ST2">PI</span> * Math.<span class="ST3">pow</span>(radio, <span class="number">2</span>);
+ 41                     <span class="comment">// Salida</span>
+ 42                     System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">El area del circulo es: </span><span class="string">&quot;</span> + area);
+ 43                     <span class="literal">break</span>;
+ 44                 <span class="literal">case</span> <span class="number">2</span>:
+ 45                     <span class="comment">// Entrada</span>
+ 46                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese el lado del cuadrado: </span><span class="string">&quot;</span>);
+ 47                     <span class="literal">double</span> lado = Utilidades_v2.<span class="ST3">verificar</span>(teclado.nextDouble(), 
+ 48                                     <span class="literal">new</span> <span class="literal">double</span>[]{<span class="number">0</span>, Double.<span class="ST2">POSITIVE_INFINITY</span>}, 
+ 49                                     <span class="string">&quot;</span><span class="string">Error! Intentelo de nuevo!</span><span class="string">&quot;</span>);
+ 50                     <span class="comment">// Proceso</span>
+ 51                     area = Math.<span class="ST3">pow</span>(lado, <span class="number">2</span>);
+ 52                     <span class="comment">// Salida</span>
+ 53                     System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">El area del cuadrado es: </span><span class="string">&quot;</span> + area);
+ 54                     <span class="literal">break</span>;
+ 55                 <span class="literal">case</span> <span class="number">3</span>:
+ 56                     <span class="comment">// Entrada</span>
+ 57                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese la base del triángulo: </span><span class="string">&quot;</span>);
+ 58                     <span class="literal">double</span> base = teclado.nextDouble();
+ 59                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese la altura del triángulo: </span><span class="string">&quot;</span>);
+ 60                     <span class="literal">double</span> altura = teclado.nextDouble();
+ 61                     <span class="comment">// Proceso</span>
+ 62                     area = (base * altura) / <span class="number">2</span>;
+ 63                     <span class="comment">// Salida</span>
+ 64                     System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">El area del triángulo es: </span><span class="string">&quot;</span> + area);
+ 65                     <span class="literal">break</span>;
+ 66                 <span class="literal">case</span> <span class="number">4</span>:
+ 67                     <span class="comment">// Entrada</span>
+ 68                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese la diagonal mayor del rombo: </span><span class="string">&quot;</span>);
+ 69                     <span class="literal">double</span> diagonalMayor = Utilidades_v2.<span class="ST3">verificar</span>(teclado.nextDouble(), 
+ 70                                     <span class="literal">new</span> <span class="literal">double</span>[]{<span class="number">0</span>, Double.<span class="ST2">POSITIVE_INFINITY</span>}, 
+ 71                                     <span class="string">&quot;</span><span class="string">Error! Intentelo de nuevo!</span><span class="string">&quot;</span>);
+ 72                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese la diagonal menor del rombo: </span><span class="string">&quot;</span>);
+ 73                     <span class="literal">double</span> diagonalMenor = Utilidades_v2.<span class="ST3">verificar</span>(teclado.nextDouble(), 
+ 74                                     <span class="literal">new</span> <span class="literal">double</span>[]{<span class="number">0</span>, Double.<span class="ST2">POSITIVE_INFINITY</span>}, 
+ 75                                     <span class="string">&quot;</span><span class="string">Error! Intentelo de nuevo!</span><span class="string">&quot;</span>);
+ 76                     <span class="comment">// Proceso</span>
+ 77                     area = (diagonalMayor * diagonalMenor) / <span class="number">2</span>;
+ 78                     <span class="comment">// Salida</span>
+ 79                     System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">El area del rombo es: </span><span class="string">&quot;</span> + area);
+ 80                     <span class="literal">break</span>;
+ 81                 <span class="literal">case</span> <span class="number">5</span>:
+ 82                     <span class="comment">// Entrada</span>
+ 83                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese la base del paralelogramo: </span><span class="string">&quot;</span>);
+ 84                     <span class="literal">double</span> baseParalelogramo = Utilidades_v2.<span class="ST3">verificar</span>(teclado.nextDouble(), 
+ 85                                     <span class="literal">new</span> <span class="literal">double</span>[]{<span class="number">0</span>, Double.<span class="ST2">POSITIVE_INFINITY</span>}, 
+ 86                                     <span class="string">&quot;</span><span class="string">Error! Intentelo de nuevo!</span><span class="string">&quot;</span>);
+ 87                     System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese la altura del paralelogramo: </span><span class="string">&quot;</span>);
+ 88                     <span class="literal">double</span> alturaParalelogramo = Utilidades_v2.<span class="ST3">verificar</span>(teclado.nextDouble(), 
+ 89                                     <span class="literal">new</span> <span class="literal">double</span>[]{<span class="number">0</span>, Double.<span class="ST2">POSITIVE_INFINITY</span>}, 
+ 90                                     <span class="string">&quot;</span><span class="string">Error! Intentelo de nuevo!</span><span class="string">&quot;</span>);
+ 91                     <span class="comment">// Proceso</span>
+ 92                     area = baseParalelogramo * alturaParalelogramo;
+ 93                     <span class="comment">// Salida</span>
+ 94                     System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">El area del paralelogramo es: </span><span class="string">&quot;</span> + area);
+ 95                     <span class="literal">break</span>;
+ 96                 <span class="literal">case</span> <span class="number">6</span>:
+ 97                     System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Hasta luego!</span><span class="string">&quot;</span>);
+ 98                     <span class="literal">break</span>;
+ 99                 <span class="literal">default</span>:
+100                     System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Opción inválida, intentelo de nuevo!</span><span class="string">&quot;</span>);
+101             }
+102             
+103             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">=============================================</span><span class="literal">\n</span><span class="string">&quot;</span>);
+104             
+105         } <span class="literal">while</span>(opcion != <span class="number">6</span>);
+106         
+107         teclado.close();
+108     }
+109 }
+</pre></body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejercicio10.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+table {color: #888888; background-color: #313335; font-family: Consolas}
+.literal {color: #cc7832}
+.whitespace {color: #505050}
+.comment {color: #808080}
+.ST1 {color: #ffc66d; font-family: Consolas; font-style: italic}
+.ST2 {color: #9876aa; font-family: Consolas; font-style: italic}
+.ST0 {color: #808080; font-family: Consolas; font-weight: bold}
+.string {color: #6a8759}
+.number {color: #6897bb}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Moisés\Documents\GitHub\Taller_de_Programación\Semana02\S02_Ejercicios\src\s02_ejercicios\Ejercicio10.java</td></tr></table>
+<pre>
+ 1 <span class="literal">package</span> s02_ejercicios;
+ 2 
+ 3 <span class="literal">import</span> java.util.Scanner;
+ 4 
+ 5 <span class="comment">/**</span>
+ 6 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Moisés</span>
+ 7  <span class="comment">*/</span>
+ 8 <span class="literal">public</span> <span class="literal">class</span> Ejercicio10 {
+ 9     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
+10         <span class="comment">// Declaración e inicialización</span>
+11         <span class="literal">int</span> numHombres, numMujeres;
+12         <span class="literal">double</span> poblacion, pH, pM;
+13         
+14         <span class="comment">// Entrada</span>
+15         Scanner teclado = <span class="literal">new</span> Scanner(System.<span class="ST2">in</span>);
+16         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese el número de hombres: </span><span class="string">&quot;</span>); numHombres = teclado.nextInt();
+17         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese el número de mujeres: </span><span class="string">&quot;</span>); numMujeres = teclado.nextInt();
+18         
+19         <span class="comment">// Proceso</span>
+20         poblacion = numHombres + numMujeres;
+21         pH = (numHombres/poblacion)*<span class="number">100</span>;
+22         pM = (numMujeres/poblacion)*<span class="number">100</span>;
+23         
+24         <span class="comment">// Salida</span>
+25         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="literal">\n</span><span class="string">Porcentajes:</span><span class="string">&quot;</span>);
+26         System.<span class="ST2">out</span>.println(pH + <span class="string">&quot;</span><span class="string">% de hombres.</span><span class="string">&quot;</span>);
+27         System.<span class="ST2">out</span>.println(pM + <span class="string">&quot;</span><span class="string">% de mujeres.</span><span class="string">&quot;</span>);
+28     }
+29 }
+</pre></body>
+</html>

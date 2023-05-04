@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejercicio07.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+table {color: #888888; background-color: #313335; font-family: Consolas}
+.ST3 {font-family: Consolas; font-style: italic}
+.literal {color: #cc7832}
+.whitespace {color: #505050}
+.comment {color: #808080}
+.ST1 {color: #ffc66d; font-family: Consolas; font-style: italic}
+.ST2 {color: #9876aa; font-family: Consolas; font-style: italic}
+.ST0 {color: #808080; font-family: Consolas; font-weight: bold}
+.string {color: #6a8759}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Moisés\Documents\GitHub\Taller_de_Programación\Semana02\S02_Ejercicios\src\s02_ejercicios\Ejercicio07.java</td></tr></table>
+<pre>
+ 1 <span class="literal">package</span> s02_ejercicios;
+ 2 
+ 3 <span class="literal">import</span> java.util.Scanner;
+ 4 <span class="literal">import</span> java.time.LocalDate;
+ 5 
+ 6 <span class="comment">/**</span>
+ 7 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Moisés</span>
+ 8  <span class="comment">*/</span>
+ 9 <span class="literal">public</span> <span class="literal">class</span> Ejercicio07 {
+10     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
+11         <span class="comment">// Declaración</span>
+12         <span class="literal">int</span> edad, anioAct, anioNac;
+13         
+14         <span class="comment">// Entrada</span>
+15         Scanner teclado = <span class="literal">new</span> Scanner(System.<span class="ST2">in</span>);
+16         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese su edad: </span><span class="string">&quot;</span>); edad = teclado.nextInt();
+17         
+18         <span class="comment">// Proceso</span>
+19         anioAct = LocalDate.<span class="ST3">now</span>().getYear();
+20         anioNac = anioAct - edad;
+21         
+22         <span class="comment">// Salida</span>
+23         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">Año de nacimiento: </span><span class="string">&quot;</span> + anioNac);
+24     }
+25 }
+</pre></body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejercicio_02_01.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+pre {color: #a9b7c6; background-color: #2b2b2b; font-family: Consolas}
+table {color: #888888; background-color: #313335; font-family: Consolas}
+.literal {color: #cc7832}
+.whitespace {color: #505050}
+.comment {color: #808080}
+.ST1 {color: #ffc66d; font-family: Consolas; font-style: italic}
+.ST2 {color: #9876aa; font-family: Consolas; font-style: italic}
+.ST0 {color: #808080; font-family: Consolas; font-weight: bold}
+.number {color: #6897bb}
+.string {color: #6a8759}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Moisés\Documents\GitHub\Taller_de_Programación\Semana03\S04_Ejercicios_Propuestos_Clases\src\s04\Ejercicio_02_01.java</td></tr></table>
+<pre>
+ 1 <span class="literal">package</span> s04;
+ 2 
+ 3 <span class="literal">import</span> java.util.Scanner;
+ 4 
+ 5 <span class="comment">/**</span>
+ 6 <span class="comment"> *</span>
+ 7 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Magh</span>
+ 8  <span class="comment">*/</span>
+ 9 <span class="literal">public</span> <span class="literal">class</span> Ejercicio_02_01 {
+10     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST1">main</span>(String[] args) {
+11         <span class="literal">int</span> mes, dias = <span class="number">0</span>;
+12         
+13         Scanner teclado = <span class="literal">new</span> Scanner(System.<span class="ST2">in</span>);
+14         
+15         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese el número del mes: </span><span class="string">&quot;</span>);
+16         mes = teclado.nextInt();
+17 
+18         <span class="literal">switch</span> (mes) {
+19             <span class="literal">case</span> <span class="number">1</span>:
+20             <span class="literal">case</span> <span class="number">3</span>:
+21             <span class="literal">case</span> <span class="number">5</span>:
+22             <span class="literal">case</span> <span class="number">7</span>:
+23             <span class="literal">case</span> <span class="number">8</span>:
+24             <span class="literal">case</span> <span class="number">10</span>:
+25             <span class="literal">case</span> <span class="number">12</span>:
+26                 dias = <span class="number">31</span>; <span class="literal">break</span>;
+27             <span class="literal">case</span> <span class="number">4</span>:
+28             <span class="literal">case</span> <span class="number">6</span>:
+29             <span class="literal">case</span> <span class="number">9</span>:
+30             <span class="literal">case</span> <span class="number">11</span>:
+31                 dias = <span class="number">30</span>; <span class="literal">break</span>;
+32             <span class="literal">case</span> <span class="number">2</span>:
+33                 System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">Ingrese el año: </span><span class="string">&quot;</span>);
+34                 <span class="literal">int</span> anio = teclado.nextInt();
+35                 dias = ((anio % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; anio % <span class="number">100</span> != <span class="number">0</span>) || anio % <span class="number">400</span> == <span class="number">0</span>) ? <span class="number">29</span> : <span class="number">28</span>;
+36                 <span class="literal">break</span>;
+37             <span class="literal">default</span>:
+38                 System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">El número de mes ingresado no es válido.</span><span class="string">&quot;</span>);
+39                 <span class="literal">break</span>;
+40         }
+41 
+42         <span class="literal">if</span> (dias != <span class="number">0</span>) {
+43             System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">El mes </span><span class="string">&quot;</span> + mes + <span class="string">&quot;</span><span class="string"> tiene </span><span class="string">&quot;</span> + dias + <span class="string">&quot;</span><span class="string"> días.</span><span class="string">&quot;</span>);
+44         }
+45         
+46         teclado.close();
+47     }
+48 }
+49 
+</pre></body>
+</html>
