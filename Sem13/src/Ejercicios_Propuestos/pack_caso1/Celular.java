@@ -23,16 +23,27 @@ public class Celular {
     }
     
     // Métodos
+    /**
+     * Función redondear, recibe el numero a aproximar 
+     * y la cantidad de decimales a aproximar.
+     * @param numero valor a redondear
+     * @param cntDecimales número de decimales a redondear
+     * @return retorna el número redondeado
+     */
+    private double redondear(double numero, int cntDecimales) {
+        return Math.round(numero*Math.pow(10, cntDecimales))/Math.pow(10, cntDecimales);
+    }
+    
     public double costo_de_consumo() {
-        return this.segundosConsumidos * this.precioPorSegundo;
+        return redondear(this.segundosConsumidos * this.precioPorSegundo, 2);
     }
     
     public double IGV() {
-        return 0.18 * costo_de_consumo();
+        return redondear(0.18 * costo_de_consumo(), 2);
     }
     
     public double total_a_pagar() {
-        return costo_de_consumo() + IGV();
+        return redondear(costo_de_consumo() + IGV(), 2);
     }
     
     // Getters y Setters
