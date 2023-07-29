@@ -368,6 +368,8 @@ public class FrmVenta extends javax.swing.JFrame {
         txtDescripcionProducto.setText("");
         tablaModelo.setRowCount(0);
         listaDetalle.clear();
+        txtIgvVenta.setText("0.00");
+        txtTotalVenta.setText("0.00");
     }//GEN-LAST:event_btnNuevaVentaMouseClicked
 
     private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
