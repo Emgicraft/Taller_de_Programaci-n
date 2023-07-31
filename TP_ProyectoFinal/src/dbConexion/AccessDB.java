@@ -16,13 +16,20 @@ public class AccessDB {
     public AccessDB() {
     }
     
+    /**
+     * Devuelve el objeto Connection en caso de establecerse la conexión, 
+     * de lo contrario, será nulo.
+     * 
+     * @param rutaDataBase es la ubicación del archivo Access.
+     * @return Instancia de conexión.
+     */
     public static Connection conectar(String rutaDataBase) {
         Connection con = null;
         try {
             con = DriverManager.getConnection("jdbc:ucanaccess://" + rutaDataBase);
             System.out.println("Access: Conexión exitosa.");
         } catch (HeadlessException | SQLException e) {
-            Logger.getLogger(AccessDB.class.getName()).log(Level.SEVERE, null, e);
+            System.out.println("Access: Error de conexión!");
         }
         return con;
     }
