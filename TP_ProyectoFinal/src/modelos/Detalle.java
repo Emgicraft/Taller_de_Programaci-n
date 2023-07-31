@@ -2,7 +2,7 @@ package modelos;
 
 /**
  *
- * @author Moisés
+ * @author Magh
  */
 public class Detalle {
     private int id;

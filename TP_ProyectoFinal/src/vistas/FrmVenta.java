@@ -9,7 +9,7 @@ import modelos.Detalle;
 import modelos.Producto;
 
 /**
- * @author Moisés
+ * @author Magh
  */
 public class FrmVenta extends javax.swing.JFrame {
     // Atributos para emular el manejo de una base de datos

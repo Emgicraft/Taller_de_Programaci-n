@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Moisés
+ * @author Magh
  */
 public class Venta {
     private int id;

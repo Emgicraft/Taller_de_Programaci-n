@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Moisés
+ * @author Magh
  */
 public class Producto {
     private int id;
