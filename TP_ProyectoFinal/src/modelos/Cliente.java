@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  *
@@ -31,6 +30,7 @@ public class Cliente {
      * @param idCliente del Cliente a buscar.
      * @return El objeto Cliente encontrado.
      */
+    @SuppressWarnings("ConvertToTryWithResources")
     public static Cliente buscarPorID(int idCliente) {
         Cliente clienteBuscado;
         try {
@@ -48,7 +48,6 @@ public class Cliente {
                                         resultSet.getString("Nombre"), 
                                         resultSet.getString("Documento"));
             } else {
-                System.out.println("Cliente con ID " + idCliente + " no encontrado.");
                 clienteBuscado = new Cliente(-1, "Cliente no encontrado!", "Revisar ID!");
             }
             // Cerrar los recursos
@@ -63,10 +62,6 @@ public class Cliente {
     
     public int getID() {
         return id;
-    }
-
-    public void setID(int id) {
-        this.id = id;
     }
 
     public String getNombre() {

@@ -355,8 +355,8 @@ public class FrmVenta extends javax.swing.JFrame {
      * Borra todos los espacios llenados por el usuario incluyendo la tabla.
      */
     private void btnNuevaVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevaVentaMouseClicked
-        Venta ventaRealizada = new Venta(Integer.valueOf(txtIdVenta.getText()), 
-                        fecha, Integer.valueOf(txtIdCliente.getText()));
+        Venta ventaRealizada = new Venta(Integer.parseInt(txtIdVenta.getText()), 
+                        fecha, Integer.parseInt(txtIdCliente.getText()));
         listaVenta.add(ventaRealizada);
         fecha = LocalDate.now();
         txtIdVenta.setText(String.valueOf(ventaRealizada.getID() + 1));
